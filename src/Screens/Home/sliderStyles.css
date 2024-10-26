@@ -1,0 +1,52 @@
+.slick-dots li button {
+    background-color: white; 
+    opacity: 0.5; 
+  }
+  
+  .slick-dots li.slick-active button {
+    opacity: 1; 
+        color: white !important;
+  }
+  
+.slick-slider {
+    background-color: #1f1c2c; 
+    border-radius: 8px;
+    padding: 15px;
+  }
+  
+  .slick-slide {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .slick-prev, .slick-next {
+    color: white;
+    z-index: 1;
+    font-size: 24px;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .slick-prev:hover, .slick-next:hover {
+    color: #6DA5C0; 
+  }
+  
+  .slick-dots li button:before {
+    font-size: 12px;
+    color: #aaa; 
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .slick-dots li.slick-active button:before {
+    color: #6DA5C0;
+  }
+  
+  .slick-arrow {
+    background: rgba(255, 255, 255, 0.1) !important; 
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .slick-arrow:hover {
+    background: rgba(109, 165, 192, 0.5); 
+  }
+  

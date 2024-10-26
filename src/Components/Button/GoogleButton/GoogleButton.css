@@ -1,0 +1,31 @@
+.vip-google-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff; /* White background for contrast */
+  color: #4285F4; /* Google Blue color */
+  border: 2px solid #4285F4; /* Border in Google Blue */
+  border-radius: 50px; /* Rounded corners */
+  padding: 12px 44px; /* Vertical and horizontal padding */
+  font-size: 1.1rem; /* Font size */
+  font-weight: bold; /* Bold text */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Soft shadow */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  width: 400px; /* Fixed width for button */
+  margin-top: 16px; /* Spacing from the other elements */
+}
+
+.vip-google-button:hover {
+  background: #4285F4; /* Change background to Google Blue on hover */
+  color: #ffffff; /* Change text color to white on hover */
+  border: 2px solid transparent; /* Remove border on hover for a cleaner look */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+  transform: translateY(-2px); /* Slight upward movement on hover */
+}
+
+.google-icon {
+  width: 24px; /* Icon size */
+  height: 24px; /* Icon size */
+  margin-right: 8px; /* Space between icon and text */
+}

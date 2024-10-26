@@ -1,0 +1,23 @@
+.customers-orders {
+    padding: 20px;
+    max-width: 1200px; /* Add a max-width for large screens */
+    margin: 0 auto; /* Center the container */
+}
+
+.order-details {
+    width: 100%; /* Make order details section full width */
+}
+
+@media (max-width: 768px) {
+    .customers-orders {
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+    
+    .order-details {
+        padding: 10px; /* Adjust padding for order details */
+    }
+
+    .ant-table {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+}

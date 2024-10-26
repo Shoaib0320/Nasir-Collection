@@ -1,0 +1,27 @@
+/* CustomerFeedbacks.css */
+@media (max-width: 768px) {
+    .ant-table {
+      font-size: 12px; /* Adjust font size on small screens */
+    }
+  
+    .ant-table th, .ant-table td {
+      padding: 8px; /* Reduce padding for better fit */
+    }
+  
+    /* Hide certain columns on smaller screens */
+    .ant-table-column-hidden {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .ant-table {
+      font-size: 10px; /* Further reduce font size on extra small screens */
+    }
+  
+    /* Adjust padding for extra small screens */
+    .ant-table th, .ant-table td {
+      padding: 4px; 
+    }
+  }
+  

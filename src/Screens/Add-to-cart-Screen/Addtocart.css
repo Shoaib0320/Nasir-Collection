@@ -1,0 +1,174 @@
+/* AddToCart.css */
+.add-to-cart {
+    max-width: 800px; /* Set a max-width for better alignment */
+    margin: 20px auto; /* Center the cart */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px #928dab;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    font-family: 'Arial', sans-serif; /* Modern font */
+}
+
+.add-to-cart h1 {
+    text-align: center;
+    color: #a8b6bc;
+    margin-bottom: 20px;
+    font-size: 2rem; /* Larger heading */
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: aliceblue !important;
+    border: 1px solid #928dab; /* Light border for separation */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px;
+    margin: 10px 0;
+    background: #608191;
+    box-shadow: 0 15px 40px rgba(167, 125, 0, 0.3);
+    transition: box-shadow 0.5s; /* Smooth transition for hover effect */
+}
+
+.cart-item:hover {
+    box-shadow: 0 15px 40px rgba(167, 125, 0, 0.3);
+}
+
+.cart-item-details {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between image and details */
+    flex-grow: 1; /* Allow details to take remaining space */
+}
+
+.cart-item-image {
+    width: 120px; /* Fixed size for images */
+    height: 120px; /* Keep height consistent */
+    border-radius: 5px; /* Rounded image corners */
+    object-fit: cover; /* Ensure images are covered */
+    margin-right: 15px; /* Space between image and text */
+}
+
+.cart-item-info {
+    flex: 1; /* Take up remaining space */
+    display: flex; /* Use flex to align info vertically */
+    flex-direction: column; /* Stack info vertically */
+}
+
+.cart-item-info h2 {
+    font-size: 1.2rem; /* Slightly larger title */
+    color: aliceblue; /* Darker shade for titles */
+    margin: 0 0 5px; /* Remove margin for better spacing */
+}
+
+.cart-item-info p {
+    margin: 5px 0; /* Consistent spacing for paragraphs */
+    color: #f9f9f9; /* Gray for secondary text */
+}
+
+.checkout-btn {
+    width: 100%; /* Full width button */
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #6DA5C0; /* Blue button */
+    color: white; /* White text */
+    border: none;
+    border-radius: 5px; /* Rounded button */
+    font-size: 1rem; /* Larger button text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.checkout-btn:hover {
+    background-color: #928dab; /* Darker blue on hover */
+}
+.cart-item-total-price{
+    color: #a8b6bc;
+}
+
+.delete-btn{
+    background-color: #6DA5C0;
+    color: #fff;
+    border: none;
+}
+
+
+
+
+
+
+
+
+.checkout-form {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: linear-gradient(135deg, #1f1c2c, #928dab);
+    box-shadow: 0 15px 40px rgba(167, 125, 0, 0.3);
+}
+
+.checkout-form h2 {
+    margin-bottom: 15px;
+    color: #a8b6bc;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+} */
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #6DA5C0;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.submit-btn {
+    background-color: #6DA5C0;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #608191;
+}
+
+@media (max-width: 768px) {
+    .checkout-form-container {
+        padding: 15px;
+    }
+
+    .submit-btn {
+        padding: 8px 12px;
+    }
+
+    .cart-item{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cart-item-image{
+        margin: 10px 0px;
+        border-radius: 20px;
+        object-fit: unset;
+    }
+}

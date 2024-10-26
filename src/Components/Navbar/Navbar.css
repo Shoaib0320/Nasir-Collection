@@ -1,0 +1,141 @@
+/* Navbar.css */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #2b5876, #4e4376);
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .navbar.sticky {
+    padding: 10px 30px;
+  }
+  
+  .navbar-logo img {
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Hamburger Menu */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Navigation Links */
+  .menu-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    background-color: #6DA5C0;
+    transform: scale(1.05);
+  }
+  
+  /* Button Container */
+  .button-container {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .navbar-button {
+    /* color: white;
+    border: 1px solid white; */
+    border-radius: 30px;
+    padding: 10px 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-button:hover {
+    /* background-color: #6DA5C0; */
+    color: white;
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 992px) {
+    .hamburger {
+      display: flex;
+    }
+  
+    .menu-container {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      background-color: #2b5876;
+      border-radius: 8px;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      padding: 15px 0;
+    }
+  
+    .menu-container.active {
+      display: flex;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+  
+    .button-container {
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+  }
+  
+
+
+
+  

@@ -1,0 +1,11 @@
+/* About.css */
+
+  .card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card-hover:hover {
+    transform: rotateY(10deg); /* Adjust the angle for a subtle rotation */
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4); /* Increase shadow on hover */
+  }
+  
