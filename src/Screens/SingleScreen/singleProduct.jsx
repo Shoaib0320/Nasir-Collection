@@ -1015,7 +1015,7 @@ import { AuthContext } from './AuthContext';
 import { db, storage } from '../../Config/firebaseConfig'; // Ensure you have storage imported
 import { collection, getDocs, addDoc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'; // Import necessary functions from Firebase Storage
-import { Drawer, Button, Input, Upload, message } from 'antd'; // Import Ant Design components
+import { Drawer, Button, Input, Upload, message , Image} from 'antd'; // Import Ant Design components
 import { PlusOutlined } from '@ant-design/icons'; // Ant Design icon for upload button
 import './SingleProduct.css';
 
@@ -1150,7 +1150,15 @@ function SingleProduct() {
                 {/* Feedback Section */}
                 {user && (
                     <div>
-                        <Button className="add-product-btn" onClick={toggleDrawer}>
+                        <Button 
+                             style={{
+                                backgroundColor: '#6DA5C0',
+                                color: '#fff',
+                                fontWeight: 'bold',
+                                borderRadius: '8px',
+                                border: 'none'
+                            }}
+                        className="add-product-btn" onClick={toggleDrawer}>
                             Add Feedback
                         </Button>
                     </div>
@@ -1183,7 +1191,13 @@ function SingleProduct() {
                         )}
                     </Upload>
                     <Button
-                        style={{ backgroundColor: '#6DA5C0' }}
+                            style={{
+                                backgroundColor: '#6DA5C0',
+                                color: '#fff',
+                                fontWeight: 'bold',
+                                borderRadius: '8px',
+                                border: 'none'
+                            }}
                         type="primary" onClick={handleFeedbackSubmit}>
                         Submit Feedback
                     </Button>
@@ -1215,29 +1229,37 @@ function SingleProduct() {
                     )}
                 </div> */}
 
-                {/* Feedback Display */}
-                <h2 className="feedback-header">Customer Feedbacks</h2>
-                <div>
-                    {feedbackList.length > 0 ? (
-                        feedbackList.map(feedbackItem => (
-                            <div key={feedbackItem.id} className="feedback-item">
-                                <div>
-                                    <strong>{feedbackItem.userId} :</strong>
-                                    <div className="feedback-images">
-                                        {feedbackItem.images.map((imageUrl, index) => (
-                                            <img key={index} src={imageUrl} alt={`Feedback ${index}`} />
-                                        ))}
-                                    </div>
-                                    <div className="feedback-content">{feedbackItem.feedback}</div>
-                                    <div className="feedback-meta">
-                                        Posted {calculateDaysSince(feedbackItem.timestamp)} days ago
+            <div>
+                    {/* Feedback Display */}
+                    <h2 className="feedback-header">Customer Feedbacks</h2>
+                    <div>
+                        {feedbackList.length > 0 ? (
+                            feedbackList.map(feedbackItem => (
+                                <div key={feedbackItem.id} className="feedback-item">
+                                    <div>
+                                        <strong>{feedbackItem.userId} :</strong>
+                                        <div className="feedback-images">
+                                            {feedbackItem.images.map((imageUrl, index) => (
+                                                <Image
+                                                    key={index}
+                                                    src={imageUrl}
+                                                    alt={`Feedback ${index}`}
+                                                    width={100} // Adjust thumbnail size if needed
+                                                    preview // Enable preview (opens on click)
+                                                />
+                                            ))}
+                                        </div>
+                                        <div className="feedback-content">{feedbackItem.feedback}</div>
+                                        <div className="feedback-meta">
+                                            Posted {calculateDaysSince(feedbackItem.timestamp)} days ago
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))
-                    ) : (
-                        <p>No feedback available yet.</p>
-                    )}
+                            ))
+                        ) : (
+                            <p>No feedback available yet.</p>
+                        )}
+                    </div>
                 </div>
             </div>
         </>

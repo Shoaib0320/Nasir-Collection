@@ -9,6 +9,7 @@ import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { styled } from '@mui/system';
 import { IconButton, Menu, MenuItem, Typography, Avatar, Divider } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { db } from '../../Config/firebaseConfig'; // Ensure this is imported
 import { doc, getDoc } from 'firebase/firestore';
 
@@ -93,8 +94,9 @@ export const Navbar = () => {
             <li><Link to="/about" onClick={() => setIsOpen(false)}>About</Link></li>
             <li><Link to="/products" onClick={() => setIsOpen(false)}>Products</Link></li>
             <li><Link to="/contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
+            <li><Link to="/cart" onClick={() => setIsOpen(false)}>{<ShoppingCartIcon />}</Link></li>
             {/* Conditionally render Orders link */}
-            {hasOrders && <li><Link to="/customersorder" onClick={() => setIsOpen(false)}>Orders</Link></li>}
+            {/* {hasOrders && <li><Link to="/customersorder" onClick={() => setIsOpen(false)}>Orders</Link></li>} */}
           </ul>
 
           {/* User Button and Links */}
@@ -126,6 +128,11 @@ export const Navbar = () => {
                     <Typography variant="body2" sx={{ color: '#555', fontStyle: 'italic' }}>
                       {user.email}
                     </Typography>
+                  </MenuItem>
+                    <Typography variant="body2" sx={{ color: '#555', fontStyle: 'italic' }}>
+                        {hasOrders &&<Link to="/customersorder">Orders</Link>}
+                    </Typography>
+                  <MenuItem>
                   </MenuItem>
                   <Divider />
                   <MenuItem onClick={handleLogout} sx={{ '&:hover': { color: '#1976d2' }, fontWeight: 'bold', color: '#444' }}>

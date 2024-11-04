@@ -1,5 +1,5 @@
 /* Navbar.css */
-
+/* 
 * {
     box-sizing: border-box;
     margin: 0;
@@ -37,7 +37,6 @@
     border-radius: 10px;
   }
   
-  /* Hamburger Menu */
   .hamburger {
     display: none;
     flex-direction: column;
@@ -52,7 +51,6 @@
     transition: all 0.3s ease;
   }
   
-  /* Navigation Links */
   .menu-container {
     display: flex;
     align-items: center;
@@ -78,15 +76,12 @@
     transform: scale(1.05);
   }
   
-  /* Button Container */
   .button-container {
     display: flex;
     gap: 10px;
   }
   
   .navbar-button {
-    /* color: white;
-    border: 1px solid white; */
     border-radius: 30px;
     padding: 10px 15px;
     text-align: center;
@@ -94,12 +89,10 @@
   }
   
   .navbar-button:hover {
-    /* background-color: #6DA5C0; */
     color: white;
     transform: scale(1.05);
   }
   
-  /* Responsive Styles */
   @media (max-width: 992px) {
     .hamburger {
       display: flex;
@@ -134,8 +127,197 @@
       margin-top: 10px;
     }
   }
-  
+   */
 
 
 
-  
+
+   /* Navbar.css */
+
+/* Import a luxurious serif font */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+/* General Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: linear-gradient(90deg, #0d0d1a, #1a1a2e);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s ease;
+  color: #fff;
+  font-family: 'Merriweather', serif; /* Luxurious font style */
+}
+
+.navbar.sticky {
+  background: rgba(13, 13, 26, 0.95); /* Slightly transparent on scroll */
+}
+
+/* Logo */
+.navbar-logo img {
+  height: 55px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo img:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Hamburger Menu (for mobile view) */
+.hamburger {
+  cursor: pointer;
+  display: none; /* Initially hidden, shown only in mobile view */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+}
+
+.hamburger div {
+  height: 3px;
+  width: 100%;
+  background-color: #d4af37; /* Luxurious gold for hamburger icon */
+  transition: all 0.3s ease;
+}
+
+.menu-container {
+  display: flex;
+  align-items: center;
+}
+
+.menu-container.active {
+  display: flex;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 10px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.15em;
+  padding: 8px 20px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+  color: #d4af37; /* Premium gold on hover */
+  border-bottom: 2px solid #d4af37; /* Underline with gold */
+  background-color: rgba(212, 175, 55, 0.1); /* Gold overlay */
+}
+
+/* Button Container (Login/Signup Buttons) */
+.button-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navbar-button:hover {
+  color: white;
+  transform: scale(1.05);
+}
+
+.navbar-button {
+  /* padding: 8px 25px; */
+  /* background-color: #d4af37;  */
+  color: #0d0d1a; /* Dark text */
+  font-weight: bold;
+  font-family: 'Merriweather', serif;
+  /* border: 1px solid #d4af37; */
+  border-radius: 6px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease;
+}
+
+/* .navbar-button:hover {
+  background-color: #b08b2d;
+} */
+
+/* User Icon and Avatar */
+/* .IconButton {
+  color: #d4af37;
+} */
+
+.MuiAvatar-root {
+  /* border: 2px solid #d4af37; */
+  transition: transform 0.3s ease;
+}
+
+.MuiAvatar-root:hover {
+  transform: scale(1.1); /* Slightly enlarge avatar on hover */
+}
+
+/* Styled Menu for Dropdown */
+.MuiMenu-paper {
+  background: linear-gradient(90deg, #0d0d1a, #1a1a2e);
+  border-radius: 10px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
+}
+
+.MuiMenuItem-root {
+  color: #fff;
+  padding: 12px 24px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+  font-family: 'Merriweather', serif;
+}
+
+.MuiMenuItem-root:hover {
+  background-color: rgba(212, 175, 55, 0.1); /* Gold overlay on hover */
+}
+
+.divider {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-container {
+    display: none; /* Hide menu on mobile */
+  }
+
+  .menu-container.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: linear-gradient(90deg, #0d0d1a, #1a1a2e);
+    width: 100%;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-links li {
+    margin: 12px 0;
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger on mobile */
+  }
+}
