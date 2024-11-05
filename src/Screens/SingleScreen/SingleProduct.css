@@ -458,60 +458,108 @@
   margin-top: 10px;
 } */
 
-.feedback-header {
-  font-size: 1.5rem;
-  font-family: 'Georgia', serif;
-  color: #6DA5C0; /* VIP gold */
-  margin-top: 40px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.feedback-item {
+/* Base styles for the feedback section */
+.feedback-list {
   display: flex;
   flex-direction: column;
-  background-color: #6DA5C0;
-  border: 1px solid #928dab;
-  padding: 15px;
+  gap: 20px;
+  padding: 20px;
+  /* background-color: #807272;  */
+  /* background: linear-gradient(to right, #0d9e86, #fffdd0b6); */
   border-radius: 12px;
-  box-shadow: 0 15px 40px #928dab;
-  margin-bottom: 20px;
+  max-width: 800px; /* Limit the max width for better readability */
+  margin: auto; /* Center the feedback list */
 }
 
-.feedback-images img {
-  width: 80px;
-  height: 80px;
-  border-radius: 10px;
-  margin-right: 10px;
-  box-shadow: 0 15px 40px #928dab;
+/* Styles for each feedback item */
+.feedback-item {
+  /* background: #16213e;  */
+  background: linear-gradient(to right, #008080, #333333);
+  border: 1px solid #4e4e9d; /* Subtle border for definition */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Elevated shadow for a luxurious feel */
+  color: #eaeaea; /* Light text for readability */
+  font-family: 'Montserrat', sans-serif; /* Elegant, modern font */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.feedback-content {
-  color: #f0f0f0;
-  font-family: 'Georgia', serif;
-  font-style: italic;
-  margin-top: 10px;
+/* Hover effect for feedback items */
+.feedback-item:hover {
+  transform: translateY(-5px); /* Subtle lift effect */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6); /* Deeper shadow on hover */
 }
 
-.feedback-meta {
-  color: #fff;
-  font-size: 0.9rem;
-  margin-top: 10px;
+/* Styles for the feedback user's name */
+.feedback-item strong {
+  font-weight: 700; /* Bold font weight for emphasis */
+  color: #fff; /* Gold color for user names */
+  display: block;
+  margin-bottom: 10px;
 }
 
-@media (min-width: 768px) {
+/* General paragraph styles */
+.feedback-item p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  line-height: 1.5; /* Improved line height for readability */
+}
+
+/* Styles for the media gallery */
+.media-gallery {
+  display: flex;
+  flex-wrap: wrap; /* Wrap media items to new lines */
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Styles for video and image media */
+.media-gallery video,
+.media-gallery img {
+  border: 2px solid #008080; /* Gold border for media */
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; /* Full width for responsiveness */
+  max-width: 300px; /* Max width to limit size */
+}
+
+/* Hover effects for media items */
+.media-gallery video:hover,
+.media-gallery img:hover {
+  transform: scale(1.05); /* Slight scale on hover */
+  box-shadow: 0 4px 12px #008080; /* Gold shadow on hover */
+}
+
+/* Styles for the timestamp */
+.feedback-item p:last-of-type {
+  font-size: 14px;
+  color: #a1a1b3; /* Lighter color for timestamp */
+  margin-top: 15px;
+}
+
+/* Styles for no feedback message */
+.feedback-list p {
+  text-align: center;
+  font-size: 18px;
+  color: #c2c2d1; /* Light grey for no feedback message */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .feedback-list {
+      padding: 10px; /* Reduced padding on smaller screens */
+  }
+
   .feedback-item {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
+      padding: 15px; /* Smaller padding for feedback items */
   }
-  
-  .feedback-content {
-      flex-grow: 1;
-      margin-left: 20px;
+
+  .feedback-item p {
+      font-size: 14px; /* Smaller font for better fit */
   }
-  
-  .feedback-images {
-      margin-top: 0;
+
+  .media-gallery video,
+  .media-gallery img {
+      max-width: 100%; /* Full width on mobile */
   }
 }

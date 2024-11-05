@@ -12,7 +12,6 @@ const Sidebar = ({ open, toggleDrawer }) => {
         { text: 'Orders', icon: <ListAlt />, path: '/admin/orders' },
         { text: 'Feedback', icon: <Feedback />, path: '/admin/feedback' }, // Feedback icon
         { text: 'Customer Feedbacks', icon: <Feedback />, path: '/admin/customerfeedbacks' }, // Feedback icon
-
     ];
 
     return (

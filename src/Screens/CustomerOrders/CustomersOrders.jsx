@@ -1103,6 +1103,7 @@ import { AuthContext } from '../SingleScreen/AuthContext';
 import { db } from '../../Config/firebaseConfig';
 import { doc, onSnapshot, setDoc, getDoc } from 'firebase/firestore';
 import { Drawer, Table, Button, Typography, List, Avatar, Row, Col, Form, Input, message } from 'antd';
+import moment from 'moment';
 import './CustomersOrders.css';
 
 const { Title, Text } = Typography;
@@ -1114,6 +1115,24 @@ export const CustomersOrders = ({ setHasOrders }) => {
     const [selectedOrder, setSelectedOrder] = useState(null);
     const [feedback, setFeedback] = useState('');
     const [feedbackName, setFeedbackName] = useState('');
+    const [drawerWidth, setDrawerWidth] = useState('35%');
+
+    // Dynamically adjust drawer width based on window size
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth <= 768) {
+                setDrawerWidth('100%');
+            } else if (window.innerWidth <= 1024) {
+                setDrawerWidth('50%');
+            } else {
+                setDrawerWidth('35%');
+            }
+        };
+
+        handleResize(); // Set initial value
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     useEffect(() => {
         const fetchOrders = async () => {
@@ -1264,13 +1283,19 @@ export const CustomersOrders = ({ setHasOrders }) => {
                 placement="right"
                 onClose={onClose}
                 visible={visible}
-                width="35%"
+                width={drawerWidth}
                 bodyStyle={{ padding: '20px' }}
             >
                 {selectedOrder && (
                     <div className="order-details">
                         <Title level={3}>Items in your order:</Title>
-                        <List
+                        <p><strong>Customer Name:</strong> {selectedOrder.name}</p>
+                        <p><strong>User ID:</strong> {selectedOrder.user}</p>
+                        <p><strong>Date:</strong> {moment(selectedOrder.timestamp).format('YYYY-MM-DD')}</p>
+                        <p><strong>Total Amount:</strong> PKR {selectedOrder.totalAmount}</p>
+                        <p>
+                            <strong>Status:</strong> {selectedOrder.status === 'Delivered' ? 'Delivered' : 'Pending'}
+                        </p>                        <List
                             itemLayout="horizontal"
                             dataSource={selectedOrder.items}
                             renderItem={(item) => (
@@ -1293,7 +1318,7 @@ export const CustomersOrders = ({ setHasOrders }) => {
                         />
                         {selectedOrder.status === 'Delivered' && (
                             <div style={{ marginTop: '20px' }}>
-                                <Title level={4}>Leave your feedback:</Title>
+                                <Title level={4}>Leave Your Feedback About This Store:</Title>
                                 <Form onFinish={handleFeedbackSubmit}>
                                     <Form.Item>
                                         <Input
