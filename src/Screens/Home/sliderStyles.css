@@ -1,4 +1,4 @@
-.slick-dots li button {
+/* .slick-dots li button {
     background-color: white; 
     opacity: 0.5; 
   }
@@ -49,4 +49,161 @@
   .slick-arrow:hover {
     background: rgba(109, 165, 192, 0.5); 
   }
-  
+   */
+
+
+
+
+
+
+
+
+   /* General container adjustments for a premium look */
+.Container {
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+/* Hero Section Styling */
+.hero-section {
+  background-image: linear-gradient(135deg, #1f1c2c, #928dab);
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #ffdf00; /* Gold color for emphasis */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section p {
+  font-size: 1.3rem;
+  color: #d3d3d3;
+}
+
+.hero-button {
+  background-color: #ffdf00;
+  color: #1f1c2c;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  box-shadow: 0 8px 25px rgba(255, 223, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #d4af37; /* Slightly darker gold */
+  box-shadow: 0 12px 35px rgba(255, 223, 0, 0.6);
+  color: #fff;
+}
+
+/* Slider Product Cards */
+.slider-card {
+  background-color: #1f1c2c;
+  color: white;
+  padding: 30px 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.slider-card img {
+  border-radius: 10px;
+  transition: transform 0.4s;
+}
+
+.slider-card:hover img {
+  transform: scale(1.1);
+}
+
+.slider-card h6 {
+  font-size: 1.5rem;
+  color: #ffdf00;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.slider-card p {
+  font-size: 1.2rem;
+  color: #b0b0b0;
+}
+
+.slider-button {
+  margin-top: 15px;
+  background-color: #ffdf00;
+  color: #1f1c2c;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(255, 223, 0, 0.3);
+}
+
+.slider-button:hover {
+  background-color: #d4af37;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(255, 223, 0, 0.5);
+}
+
+/* Footer Section */
+.footer-section {
+  background-image: linear-gradient(135deg, #2b5876, #4e4376);
+  color: white;
+  padding: 40px 20px;
+  border-radius: 15px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.footer-section h4 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffdf00;
+  letter-spacing: 2px;
+}
+
+.footer-section a {
+  color: #d3d3d3;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-section a:hover {
+  color: #ffdf00;
+  text-decoration: underline;
+}
+
+.footer-icons .MuiIconButton-root {
+  background-color: #ffdf00;
+  color: #1f1c2c;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+
+.footer-icons .MuiIconButton-root:hover {
+  background-color: #d4af37;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Decorative Overlay for Footer */
+.footer-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  z-index: 1;
+}

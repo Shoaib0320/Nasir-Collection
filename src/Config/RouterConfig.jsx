@@ -54,7 +54,7 @@ export const RouterConfig = () => {
         <ThemeProvider theme={theme}>
             <CssBaseline /> {/* Apply baseline styles */}
             <BrowserRouter>
-            <Navbar />
+            {/* <Navbar /> */}
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/about' element={<About />} />

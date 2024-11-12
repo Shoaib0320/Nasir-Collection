@@ -216,9 +216,7 @@ import { doc, getDoc } from 'firebase/firestore';
 
 // Custom styles for the Material-UI Menu with a gradient background
 const StyledMenu = styled(Menu)({
-  // '& .MuiPaper-root': {
-  //   background: 'linear-gradient(to right, #00416A, #E4E5E6)',
-  // },
+
 });
 
 export const Navbar = () => {
@@ -358,7 +356,7 @@ export const Navbar = () => {
           </div>
         </div>
       </nav>
-      <br /><br /><br /><br />
+      <br />
     </div>
   );
 };
