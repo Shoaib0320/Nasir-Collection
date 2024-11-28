@@ -9,7 +9,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './sliderStyles.css';
 import { HeroSection } from '../../Components/HeroSection/HeroSection';
-import Sidebar from '../../Components/SidebarLayout/Sidebar';
 
 
 export const Home = () => {
@@ -91,7 +90,6 @@ export const Home = () => {
     <Container 
       // maxWidth="lg" 
     >
-      <Sidebar />
       <br />
       <br />
 

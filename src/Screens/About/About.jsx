@@ -23,7 +23,7 @@ export const About = () => {
         {/* Header Section */}
         <div style={{ textAlign: 'center', marginBottom: '50px' }}>
           <Title level={2} style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 'bolder', color: '#fff',}}>
-             About Click Shop Store
+             About Nasir Collection
           </Title>
           <Paragraph style={{ fontSize: '18px', color: '#45DFB1' }}>
             Your one-stop solution for quality products and seamless shopping since 2024.

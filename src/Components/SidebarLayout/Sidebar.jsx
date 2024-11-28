@@ -98,21 +98,33 @@
 
 
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaHome, FaUsers, FaFolder, FaCalendar, FaFileAlt, FaChartBar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../../Config/firebaseConfig';
+import { LoginButton } from '../Button/LoginButton';
+import { SignupButton } from '../Button/SignupButton';
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false); // Sidebar is closed by default
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
 
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
       <div
-        className={`fixed inset-y-0 left-0 z-30 transform ${
-          isOpen ? 'translate-x-0' : '-translate-x-full'
-        } w-64 bg-gray-900 text-white transition-transform duration-300 ease-in-out`}
+        className={`fixed inset-y-0 left-0 z-30 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'
+          } w-64 bg-gray-900 text-white transition-transform duration-300 ease-in-out`}
       >
         {/* Sidebar Content */}
         <div className="p-4 flex items-center justify-between">
@@ -130,7 +142,7 @@ const Sidebar = () => {
             <Link to="/">
               <li className="flex items-center p-4 text-white hover:bg-gray-700 cursor-pointer">
                 <FaHome className="mr-4" />
-                  Home
+                Home
               </li>
             </Link>
             <Link to="/about">
@@ -142,19 +154,19 @@ const Sidebar = () => {
             <Link to="/products">
               <li className="flex items-center p-4 text-white hover:bg-gray-700 cursor-pointer">
                 <FaFolder className="mr-4" />
-                    Products
+                Products
               </li>
             </Link>
             <Link to="/contact">
               <li className="flex items-center p-4 text-white hover:bg-gray-700 cursor-pointer">
                 <FaCalendar className="mr-4" />
-                    Contact
+                Contact
               </li>
             </Link>
             <Link to="/cart">
               <li className="flex items-center p-4 text-white hover:bg-gray-700 cursor-pointer">
                 <FaFileAlt className="mr-4" />
-                  <ShoppingCartIcon />
+                <ShoppingCartIcon />
               </li>
             </Link>
             <li className="flex items-center p-4 text-white hover:bg-gray-700 cursor-pointer">
@@ -177,7 +189,7 @@ const Sidebar = () => {
             ☰
           </button>
           {/* Search and Profile Section */}
-          <div className="flex items-center space-x-4">
+          {/* <div className="flex items-center space-x-4">
             <input
               type="text"
               placeholder="Search..."
@@ -193,11 +205,33 @@ const Sidebar = () => {
                 <p className="text-gray-700">Tom Cook</p>
               </div>
             </div>
-          </div>
+          </div> */}
+          {/* Profile Section */}
+          {user ? (
+            <div className="flex items-center">
+              {/* Show user profile picture if available, otherwise show default */}
+              <img
+                src={user.photoURL || 'https://via.placeholder.com/40'}
+                alt="Profile"
+                className="w-10 h-10 rounded-full"
+              />
+              <div className="ml-2">
+                <p className="text-gray-700">{user.displayName || 'User'}</p>
+              </div>
+            </div>
+          ) : (
+            <div className="flex items-center space-x-4">
+              <Link to="/signup" >
+                <SignupButton />
+              </Link>
+              <Link to="/login">
+                <LoginButton />
+              </Link>
+            </div>
+          )}
         </div>
 
         {/* Main Content Area */}
-        <div className="p-6">Your main content goes here...</div>
       </div>
     </div>
   );

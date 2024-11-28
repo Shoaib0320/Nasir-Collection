@@ -17,6 +17,7 @@ import AddProducts from '../Screens/AdminDashboard/Pages/AddProducts';
 import { CustomersOrders } from '../Screens/CustomerOrders/CustomersOrders';
 import { Navbar } from '../Components/Navbar/Navbar';
 import { CustomerFeedbacks } from '../Screens/AdminDashboard/Pages/CustomerFeedbacks';
+import Sidebar from '../Components/SidebarLayout/Sidebar';
 
 // Create a theme for a VIP look
 const theme = createTheme({
@@ -54,7 +55,8 @@ export const RouterConfig = () => {
         <ThemeProvider theme={theme}>
             <CssBaseline /> {/* Apply baseline styles */}
             <BrowserRouter>
-            {/* <Navbar /> */}
+            <Navbar />
+            {/* <Sidebar /> */}
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/about' element={<About />} />
