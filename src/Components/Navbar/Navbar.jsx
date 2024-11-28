@@ -279,8 +279,9 @@ export const Navbar = () => {
   return (
     <div>
       <nav className="navbar" ref={navbarRef}>
-        <div className="navbar-logo">
-          <img src={Logo} alt="Logo" />
+        <div className="navbar-logo font-serif text-3xl">
+          {/* <img src={Logo} alt="Logo" /> */}
+          Nasir Collection
         </div>
 
         <div className={`hamburger ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
